@@ -1,0 +1,63 @@
+table {
+	background-color: #2a2d34;
+	border-spacing: 6px;
+}
+td {
+	border: 1px solid white;
+}
+.cgreen {
+	color:#000000;
+	background-color:#89ff71;
+}
+.cred {
+	color:#000000;
+	background-color:#ff5858;
+}
+.corange {
+	color:#000000;
+	background-color:#ffad33;
+}
+.cpink {
+	color:#000000;
+	background-color:#e97fbc;
+}
+.cwhite {
+	color:#000000;
+	background-color:#d1d1d1;
+}
+.cyellow {
+	color:#000000;
+	background-color:#d1d040;
+}
+.cblue {
+	color:#000000;
+	background-color:#7788fc;
+}
+.cbrown {
+	color:#000000;
+	background-color:#98784f;
+}
+.cpurple {
+	color:#000000;
+	background-color:#9956aa;
+}
+.cmauve {
+	color:#000000;
+	background-color:#c15cba;
+}
+.ctop {
+	font-size: 3vmin;
+	text-align: right;
+	line-height:80%;
+}
+.cmid {
+	font-size: 4vmin;
+	text-align: center;
+	font-weight: bold;
+	line-height:0%;
+}
+.cbot {
+	font-size: 2vmin;
+	text-align: left;
+	line-height:80%;
+}

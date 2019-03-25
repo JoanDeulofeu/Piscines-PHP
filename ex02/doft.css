@@ -1,34 +1,180 @@
-.carrehori {
+.carretop {
+	position: fixed;
+	left: 10vw;
 	border-radius: 10px;
 	width:80%;
+	height: 11%;
 	background-color:#909090;
 	margin:10px auto;
-	box-shadow: 8px 8px 12px #383232;
+	box-shadow: 7px 7px 10px #000;
 }
 
-.carreverti-l {
+.carreleft {
+	position: fixed;
+	left: 0vw;
+	top: 17vh;
 	border-radius: 10px;
-	width: 15%;
+	width: 7%;
 	height: 50%;
 	background-color:#909090;
-	margin:10px auto;
-	float:left;
 	margin-left: 12%;
-	box-shadow: 8px 8px 12px #383232;
+	box-shadow: 7px 7px 10px #000;
+	display: inline-block;
+	vertical-align: top;
 }
 
-.carreverti-r {
+.carremid {
+	position: fixed;
+	left: 19.5vw;
+	top: 17vh;
 	border-radius: 10px;
-	width: 15%;
+	width: 58%;
+	height: 66%;
+	background-color:#909090;
+	margin-left: 1.6%;
+	box-shadow: 7px 7px 10px #000;
+	display: inline-block;
+}
+
+.carreright {
+	position: fixed;
+	left: 81vw;
+	top: 17vh;
+	border-radius: 10px;
+	width: 7%;
 	height: 50%;
 	background-color:#909090;
-	margin:10px auto;
-	float:right;
+	display: inline-block;
+	float: right;
+	clear: right;
 	margin-right: 12%;
-	box-shadow: 8px 8px 12px #383232;
+	box-shadow: 7px 7px 10px #000;
+	vertical-align: top;
+}
+
+.carregreen {
+	position: fixed;
+	left: 9vw;
+	top: 75vh;
+	border-radius: 10px;
+	width: 27%;
+	height: 18%;
+	background-color:#8CFD8E;
+	box-shadow: 7px 7px 10px #000;
+	padding: 5px 5px 5px 8px;
+}
+
+.textgreen {
+	font-size: 1.8vh;
+	font-family: Arial, sans-serif;
+}
+
+.textentree {
+	font-size: 4vh;
+	font-family: Times, sans-serif;
+}
+
+.textbjr {
+	font-style: italic;
 }
 
 #day_of_the_42 {
-	height:10%;
-	margin-left: 5%;
+	width: 17vw;
+	height: 5vw;
+	margin-left: 3%;
+	clear: none;
+}
+
+#cluster {
+	width: 98%;
+	height: 96%;
+	margin-top: 1%;
+	margin-left: 1%;
+	clear: none;
+}
+
+#loupe {
+	float: right;
+	width: 12vw;
+	height: 6vw;
+	/* margin-left: 70%; */
+	margin-top: -1%;
+	z-index: 20000;
+}
+
+#reload {
+	float: right;
+	width: 1vw;
+	height: 2vh;
+	margin-right: 1%;
+	margin-top: 3px;
+}
+
+#close {
+	float: right;
+	clear: right;
+	width: 1vw;
+	height: 2vh;
+	margin-right: 1%;
+	margin-top: 3.2%;
+}
+
+#arrow {
+	width: 4vw;
+	height: 8vh;
+	margin-left: 1.5vw;
+	margin-top: 2vh;
+}
+
+#main {
+	width: 4vw;
+	height: 8vh;
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+}
+
+#oeil {
+	width: 4vw;
+	height: 8vh;
+	border: 0.33vw solid red;
+	border-radius:4px;
+	margin-left: 1.1vw;
+	margin-top: 1vh;
+}
+
+#outil {
+	width: 4vw;
+	height: 8vh;
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+}
+
+#chat-icon {
+	width: 4vw;
+	height: 8vh;
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+}
+
+#book {
+	width: 4vw;
+	height: 10vh;
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+}
+
+#towel {
+	width: 4vw;
+	height: 8vh;
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	margin-bottom: 0.5vh;
+}
+
+#brick {
+	position : fixed;
+	width: 1.5vw;
+	height: 3vh;
+	margin-left: 0.5vw;
+	margin-top: 1vh;
 }

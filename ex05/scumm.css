@@ -80,6 +80,31 @@
 	height: 20vh;
 }
 
+.pxavier {
+	text-align: center;
+	position: fixed;
+	left: 41vw;
+	top: 39vh;
+	width: 20vh;
+	height: 20vh;
+}
+
+.minecraft {
+	position: fixed;
+	left: 41vw;
+	top: 19vh;
+	width: 40vh;
+	height: 30vh;
+}
+
+.mort {
+	position: fixed;
+	left: 34vw;
+	top: 43vh;
+	width: 55vh;
+	height: 25vh;
+}
+
 .textgreen {
 	font-size: 1.8vh;
 	font-family: Arial, sans-serif;
@@ -192,4 +217,9 @@
 	height: 3vh;
 	margin-left: 0.5vw;
 	margin-top: 1vh;
+}
+
+#dead {
+	width: 100%;
+	height: 100%;
 }

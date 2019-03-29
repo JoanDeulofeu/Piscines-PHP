@@ -1,23 +1,16 @@
 #!/usr/bin/php
 <?PHP
 
-instruction de maxence
+function ft_upper($tab2)
+{
+	$tab2[2] = mb_strtoupper($tab2[2]);
+	$str2 = $tab2[1] . $tab2[2] . $tab2[3];
+	return ($str2);
+}
 
-
-malluin [17 h 25]
-tu utilises preg_replace_callback
-
-ca va te donner un array
-avec case 0 ce qui match ta regex
-case 1 ce que tu as mis en 1er en ( ) etc
-si j'ecris "jambon-joan-42"
-et que ma regex c'est
-(jambon-)(joan)(-42)
-ca va te renvoyer un tableau
-[0] = jambon-joan-42
-[1]= jambon-
-[2]= joan
-[3] = -42
-donc avec ca tu peux transformer un des bouts que tas match en majuscule
-et tu rattaches le reste en minuscule
+$tab = file($argv[1]);
+$str = implode($tab);
+$str = preg_replace_callback("/(<a.+title=\")(.+)(\")/", "ft_upper", $str);
+$str = preg_replace_callback("/(<a[^>]+>)([^<]+)(<)/", "ft_upper", $str);
+echo $str;
 ?>

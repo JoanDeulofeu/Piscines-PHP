@@ -1,5 +1,12 @@
 #!/usr/bin/php
 <?PHP
+
+function ft_exit()
+{
+	echo "Wrong Format";
+	return (0);
+}
+
 date_default_timezone_set('Europe/Paris');
 
 $tab = explode(" ", "$argv[1]");
@@ -20,10 +27,7 @@ $nbyear = preg_match("/19[7-9][0-9]|20[0-9][0-9]/", "$tab[3]");
 $nbtime = preg_match("/([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]/", "$tab[4]");
 
 if ($nbday === 0 || $nbdate === 0 || $nbtime === 0 || $nbmonth === 0 || $nbyear === 0)
-{
-	echo "Wrong Format";
-	return (0);
-}
+	ft_exit();
 if (preg_match("/^[Jj].+[r]$/", "$tab[2]"))
 	$month = "01";
 if (preg_match("/^[Ff]/", "$tab[2]"))
@@ -48,6 +52,16 @@ if (preg_match("/^[Nn]/", "$tab[2]"))
 	$month = "11";
 if (preg_match("/^[Dd]/", "$tab[2]"))
 	$month = "12";
+
+//Fevrier check
+if ($month == "02" && ($tab[1] == "30" || $tab[1] == "31"))
+	ft_exit();
+if ($month == "02" && $tab[1] == "29" && $tab[3] % 4 !== 0)
+	ft_exit();
+
+//Mois de 30jours check
+if (($month == "04" || $month == "06" || $month == "09" || $month == "11") && $tab[1] == "31")
+	ft_exit();
 
 $second = strtotime("$tab[3]-$month-$tab[1] $tab[4]");
 echo "$second\n";

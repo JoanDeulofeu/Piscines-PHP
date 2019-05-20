@@ -3,7 +3,7 @@
 
 function ft_split($str)
 {
-	$tab = array_filter(explode(" ", $str));
+	$tab = (explode(" ", $str));
 	sort($tab);
 	return ($tab);
 }
@@ -27,7 +27,7 @@ function ft_cmp($a, $b)
 			return (-1);
 		if (ctype_digit($b[$i]) && ((!(ctype_alpha($a[$i]))) && (!(ctype_digit($a[$i])))))
 			return (1);
-		if (ord($a[$i]) != ord($b[$i]))
+		if (ord($a[$i]) !== ord($b[$i]))
 			return (ord($a[$i]) < ord($b[$i])) ? -1 : 1;
 		$i++;
 	}
@@ -41,7 +41,7 @@ function ft_cmp($a, $b)
 $i = 0;
 foreach($argv as $av)
 {
-	if ($i++ == 0)
+	if ($i++ === 0)
 		continue;
 	$machaine = $av;
 	$machaine = preg_replace('/\s\s+/', ' ', $machaine);
@@ -52,6 +52,7 @@ foreach($argv as $av)
 	else
 		$tab2 = $tab;
 }
+
 rsort($tab2);
 usort($tab2, "ft_cmp");
 

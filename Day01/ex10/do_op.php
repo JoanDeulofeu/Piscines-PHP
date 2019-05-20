@@ -12,8 +12,6 @@ if ($argc != 4)
 
 $argv[1] = preg_replace('/\s+/', '', $argv[1]);
 $argv[3] = preg_replace('/\s+/', '', $argv[3]);
-// echo "1 -$argv[1]-\n";
-// echo "3 -$argv[3]-\n";
 if ((!(ctype_digit($argv[1]))) || (!(ctype_digit($argv[3]))))
 	ft_exit();
 

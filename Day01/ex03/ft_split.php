@@ -6,6 +6,4 @@ function ft_split($str)
 	sort($tab);
 	return ($tab);
 }
-
-print_r(ft_split("hello     world     demain matin     Zzz Aaa"))
 ?>

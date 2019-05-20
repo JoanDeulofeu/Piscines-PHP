@@ -35,7 +35,9 @@ if ($sign == '-')
 	$result = $nb - $nb2;
 if ($sign == '*')
 	$result = $nb * $nb2;
-if ($sign == '/')
+if ($sign == '/' && $nb2 === 0)
+	ft_exit(2);
+if ($sign == '/' && $nb2 !== 0)
 	$result = $nb / $nb2;
 if ($sign == '%')
 	$result = $nb % $nb2;

@@ -5,6 +5,9 @@ function ft_return2($tab)
 	return ($tab[2]);
 }
 
+if ($argv[1] == NULL)
+	return (0);
+
 // init curl
 $c = curl_init();
 curl_setopt($c, CURLOPT_URL, $argv[1]);
@@ -33,6 +36,8 @@ $images = preg_replace_callback("/^(\/+)(.+)/", "ft_return2", $images);
 
 //create images file
 $i = -1;
+if ($tabname === NULL)
+	return (0);
 foreach ($tabname as $value) {
 	$name = "./" . $path . '/' . $value;
 	++$i;

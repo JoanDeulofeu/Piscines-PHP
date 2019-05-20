@@ -3,8 +3,8 @@
 
 function ft_exit()
 {
-	echo "Wrong Format";
-	return (0);
+	echo "Wrong Format\n";
+	exit (0);
 }
 
 date_default_timezone_set('Europe/Paris');
@@ -15,7 +15,7 @@ $tab = explode(" ", "$argv[1]");
 $nbday = preg_match("/[Ll]undi|[Mm]ardi|[Mm]ercredi|[Jj]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche/", "$tab[0]");
 
 //Date
-$nbdate = preg_match("/[1-9]|[0-2][0-9]|3[0-1]/", "$tab[1]");
+$nbdate = preg_match("/^[1-9]$|^[0-2][0-9]$|^3[0-1]$/", "$tab[1]");
 
 //Month
 $nbmonth = preg_match("/[Jj]anvier|[Ff][eé]vrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]o[uû]t|[Ss]eptembre|[Oo]ctobre|[Nn]ovembre|[Dd][ée]cembre/", "$tab[2]");

@@ -1,45 +1,46 @@
 <?PHP
-$path = "./private";
+$path = "../private";
 $passwd = $path . "/passwd";
 $error = "ERROR\n";
 $ok = "OK\n";
-$dejavu = 0;
-if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"]))
+$change = FALSE;
+$dejavu = FALSE;
+$i = -1;
+if (isset($_POST["oldpw"]) && isset($_POST["newpw"]) && isset($_POST["login"]) && isset($_POST["submit"]) && $_POST["submit"] == "OK")
 {
-	$psw = hash('whirlpool', $_POST["passwd"]);
-	if (file_exists($path) === FALSE) //si dossier existe pas
-		mkdir($path, 0777, true);
-	if ($_POST["submit"] != NULL && $_POST["passwd"] != NULL && $_POST["login"] != NULL)
+	$oldpw = hash('whirlpool', $_POST['oldpw']);
+	$newpw = hash('whirlpool', $_POST['newpw']);
+	if (file_exists($path) === FALSE || file_exists($passwd) === FALSE) //si fichier existe pas
+		echo $error;
+	else
 	{
-		if (file_exists($passwd) === FALSE) //si fichier existe pas
+		$str = file_get_contents($passwd);
+		$tab = unserialize($str);
+		foreach ($tab as $value)
 		{
-			$tab = array('login'=>$_POST['login'], 'passwd'=>$psw);
-			$secur = serialize(array($tab));
+			$i++;
+			if ($value["login"] == $_POST["login"])
+			{
+				$dejavu = TRUE;
+				if ($value["passwd"] === $oldpw)
+				{
+					$change = TRUE;
+					$tab[$i]["passwd"] = $newpw;
+				}
+				else
+					echo $error;
+			}
+		}
+		if ($dejavu === FALSE)
+			echo $error;
+		if ($change === TRUE)
+		{
+			$secur = serialize($tab);
 			file_put_contents($passwd, $secur);
 			echo $ok;
 		}
-		else
-		{
-			$tab = file_get_contents($passwd);
-			$unsecur = unserialize($tab);
-			foreach ($unsecur as $value)
-			{
-				if ($value["login"] == $_POST["login"])
-					$dejavu = 1;
-			}
-			if ($dejavu == 1) // si le login existe deja
-				echo $error;
-			else
-			{
-				$tab = array('login'=>$_POST['login'], 'passwd'=>$psw);
-				$unsecur[] = $tab;
-				$secur = serialize($unsecur);
-				file_put_contents($passwd, $secur);
-				echo $ok;
-			}
-		}
 	}
-	else
-		echo $error;
 }
+else
+	echo $error;
 ?>

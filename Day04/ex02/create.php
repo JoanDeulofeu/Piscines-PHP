@@ -1,10 +1,10 @@
 <?PHP
-$path = "./private";
+$path = "../private";
 $passwd = $path . "/passwd";
 $error = "ERROR\n";
 $ok = "OK\n";
 $dejavu = 0;
-if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"]))
+if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"]) && $_POST["submit"] == "OK")
 {
 	$psw = hash('whirlpool', $_POST["passwd"]);
 	if (file_exists($path) === FALSE) //si dossier existe pas

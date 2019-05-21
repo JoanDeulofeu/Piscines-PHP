@@ -5,14 +5,14 @@ $error = "ERROR\n";
 $dejavu = 0;
 if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"]))
 {
-	$psw = $_POST["passwd"];
+	$psw = hash('whirlpool', $_POST["passwd"]);
 	if (file_exists($path) === FALSE) //si dossier existe pas
 		mkdir($path, 0777, true);
 	if ($_POST["submit"] != NULL && $_POST["passwd"] != NULL && $_POST["login"] != NULL)
 	{
 		if (file_exists($passwd) === FALSE) //si fichier existe pas
 		{
-			$tab = array('login'=>$_POST['login'], 'passwd'=>$psw, 'submit'=>$_POST['submit']);
+			$tab = array('login'=>$_POST['login'], 'passwd'=>$psw);
 			$secur = serialize(array($tab));
 			file_put_contents($passwd, $secur);
 			echo "OK\n";
@@ -23,15 +23,16 @@ if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"])
 			$unsecur = unserialize($tab);
 			foreach ($unsecur as $value)
 			{
-				if ($value["login"] == $_SESSION["login"])
+				if ($value["login"] == $_POST["login"])
 					$dejavu = 1;
 			}
 			if ($dejavu == 1) // si le login existe deja
 				echo $error;
 			else
 			{
-				$tab = array('login'=>$_POST['login'], 'passwd'=>$pwd);
-				$secur = serialize(array($tab));
+				$tab = array('login'=>$_POST['login'], 'passwd'=>$psw);
+				$unsecur[] = $tab;
+				$secur = serialize(($unsecur));
 				file_put_contents($passwd, $secur);
 				echo "OK\n";
 			}

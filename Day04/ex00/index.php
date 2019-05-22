@@ -12,9 +12,9 @@
 ?>
 <HTML><BODY>
 	<FORM action="." method="get">
-		Identifiant: <input type="text" name="login" value="<?PHP echo $_SESSION["login"] ?>"/>
+		Identifiant: <input type="text" name="login" value="<?PHP echo $_SESSION['login'] ?>"/>
 		<BR />
-		Mot de passe: <input type="text" name="passwd" value="<?PHP echo $_SESSION["passwd"] ?>"/>
+		Mot de passe: <input type="text" name="passwd" value="<?PHP echo $_SESSION['passwd'] ?>"/>
 		<input type="submit" name="submit" value="OK"/>
 	</FORM>
 </BODY></HTML>

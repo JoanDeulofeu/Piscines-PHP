@@ -19,7 +19,7 @@ if (isset($_POST["oldpw"]) && isset($_POST["newpw"]) && isset($_POST["login"]) &
 		foreach ($tab as $value)
 		{
 			$i++;
-			if ($value["login"] == $_POST["login"])
+			if ($value["login"] === $_POST["login"])
 			{
 				$dejavu = TRUE;
 				if ($value["passwd"] === $oldpw)

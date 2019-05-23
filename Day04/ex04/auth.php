@@ -6,7 +6,7 @@ function auth($login, $passwd)
 	$error = "ERROR\n";
 	$ok = "OK\n";
 	$password = hash('whirlpool', $passwd);
-	if ($login !== NULL && $passwd !== NULL)
+	if ($login !== NULL && $passwd !== NULL && file_exists($pathpass))
 	{
 		$str = file_get_contents($pathpass);
 		$tab = unserialize($str);

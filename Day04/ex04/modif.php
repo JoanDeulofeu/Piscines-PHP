@@ -6,8 +6,10 @@ $ok = "OK\n";
 $change = FALSE;
 $dejavu = FALSE;
 $i = -1;
+
 if (isset($_POST["oldpw"]) && isset($_POST["newpw"]) && isset($_POST["login"]) && isset($_POST["submit"]) && $_POST["submit"] == "OK")
 {
+	header('Location: index.html');
 	$oldpw = hash('whirlpool', $_POST['oldpw']);
 	$newpw = hash('whirlpool', $_POST['newpw']);
 	if (file_exists($path) === FALSE || file_exists($passwd) === FALSE) //si fichier existe pas
@@ -43,4 +45,6 @@ if (isset($_POST["oldpw"]) && isset($_POST["newpw"]) && isset($_POST["login"]) &
 }
 else
 	echo $error;
+
+
 ?>

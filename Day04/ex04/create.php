@@ -4,8 +4,10 @@ $passwd = $path . "/passwd";
 $error = "ERROR\n";
 $ok = "OK\n";
 $dejavu = 0;
+
 if (isset($_POST["submit"]) && isset($_POST["passwd"]) && isset($_POST["login"]) && $_POST["submit"] == "OK")
 {
+	header('Location: index.html');
 	$psw = hash('whirlpool', $_POST["passwd"]);
 	if (file_exists($path) === FALSE) //si dossier existe pas
 		mkdir($path, 0777, true);

@@ -1,0 +1,5 @@
+Ceci est la doc de mort de cet exercice de mort.
+RED = Rouge
+GREEN = Vert
+BLUE = Bleu
+cimer !

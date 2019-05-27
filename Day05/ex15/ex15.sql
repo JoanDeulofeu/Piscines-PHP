@@ -1,1 +1,1 @@
-SELECT REVERSE(SUBSTR(telephone, 2)) AS 'enohpelet' FROM `distrib`;
+SELECT REVERSE(SUBSTR(phone_number, 2)) AS 'rebmunenohp' FROM `distrib`;

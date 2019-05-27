@@ -1,1 +1,1 @@
-SELECT titre, resum FROM `film` WHERE resum LIKE '%42%' || titre LIKE '%42%' ORDER BY duree_min;
+SELECT title, summary FROM `film` WHERE summary LIKE '%42%' || title LIKE '%42%' ORDER BY duration;

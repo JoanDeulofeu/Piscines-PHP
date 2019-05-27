@@ -1,1 +1,1 @@
-SELECT titre, resum FROM `film` WHERE lower(resum) LIKE '%vincent%' ORDER BY id_film;
+SELECT title, summary FROM `film` WHERE lower(summary) LIKE '%vincent%' ORDER BY id_film;

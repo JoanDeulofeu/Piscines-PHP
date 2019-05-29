@@ -1,3 +1,11 @@
-<- Vertex ----------------------------------------------------------------------
-Your documentation here.
----------------------------------------------------------------------- Vertex ->
+<- Vertex --------------------------------------------------------------------------------------------
+Argument pour creation Class Vertex (array (int x, int y, int z, (optionnel) instance de Class color))
+
+If Vertex::$verbose = False, alors __tostring affiche les coordonnées du vertex.
+If Vertex::$verbose = True, alors __tostring affiche aussi la couleur de sa classe color.
+
+Les fonctions __getx, __gety, __getz, __getw permettent de recuperer leur valeur.
+Les fonctions __setx, __sety, __setz, __setw permettent de modifier leur valeur avec
+un int pour argument.
+Meme chose pour __getcolor et __setcolor mais avec pour argument un array(rgb).
+-------------------------------------------------------------------------------------------- Vertex ->

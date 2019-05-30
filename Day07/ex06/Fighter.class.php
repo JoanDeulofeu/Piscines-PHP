@@ -1,12 +1,18 @@
 <?PHP
 
-Class Fighter extends UnholyFactory {
+Abstract Class Fighter {
+
+	Abstract public function fight( $target );
+
+	public $soldier;
 
 	public function __construct( $name ) {
-		parent::__construct($name);
-		return;
+		$this->soldier = $name;
 	}
 
+	public function __getsoldier( ) {
+		return $this->soldier;
+	}
 }
 
 ?>
